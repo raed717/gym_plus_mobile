@@ -16,6 +16,10 @@ public class Seance {
     private String date_debut, date_fin;
     private int id_coach;
 
+    public Seance() {
+    }
+    
+
     public Seance(int id_seance, String type_seance, String date_debut, String date_fin, int id_coach) {
         this.id_seance = id_seance;
         this.type_seance = type_seance;
