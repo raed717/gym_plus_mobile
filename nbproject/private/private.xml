@@ -4,15 +4,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/services/ServiceProduit.java</file>
-            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/entities/Produit.java</file>
-            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/utils/Static.java</file>
-=======
-            <file>file:/C:/Users/saisi/Desktop/gym_plus_mobile/src/com/mycompany/entities/Seance.java</file>
-            <file>file:/C:/Users/saisi/Desktop/gym_plus_mobile/src/com/mycompany/utils/Static.java</file>
-            <file>file:/C:/Users/saisi/Desktop/gym_plus_mobile/src/com/mycompany/entities/Produit.java</file>
->>>>>>> 703afd8ac582999d70ab13bb0eacf3a6c4d17be1
+            <file>file:/C:/Users/saisi/Desktop/gym_plus_mobile/src/com/pidevv/MyApplication.java</file>
+            <file>file:/C:/Users/saisi/Desktop/gym_plus_mobile/src/com/mycompany/gui/AjouterSeances.java</file>
         </group>
     </open-files>
 </project-private>
