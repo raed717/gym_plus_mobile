@@ -59,7 +59,7 @@ public class ServiceSeance {
 }
 
       public ArrayList<Seance> afficherSeance() {
-        String url = Static.BASE_URL + "AfficherSeances";
+        String url = Static.BASE_URL + "/AfficherTabSeances";
         req.setUrl(url);
          req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -107,5 +107,33 @@ public class ServiceSeance {
            return Seances;
      
 }
-    
+       public boolean ModifierSeance(Seance s) {
+ 
+        String url = Static.BASE_URL + "/updateTabSeance?id_seance=" + s.getId_seance()+ "typeSeance="+s.getType_seance()+"&dateDebut="+s.getDate_debut() +"&dateFin="+s.getDate_fin()+"&idCoach="+s.getId_coach();
+
+        req.setUrl(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200;  
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);//execution te3 request
+       
+        return resultOK;
+       }
+     public boolean deleteSeance(Seance s) {
+        String url = Static.BASE_URL + "/SupprimerTabSeances" + s.getId_seance();
+        req.setUrl(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200;
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
+    }
 }
