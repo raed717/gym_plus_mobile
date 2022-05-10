@@ -17,7 +17,6 @@ import java.util.ArrayList;
  import java.io.IOException;
 import java.util.Map;
 import java.util.List;
-
 /**
  *
  * @author firas
@@ -58,7 +57,7 @@ public class ServiceProduit {
 }
 
       public ArrayList<Produit> afficherProduit() {
-        String url = Static.BASE_URL + "AfficherProduits";
+        String url = Static.BASE_URL + "/AfficherProduits";
         req.setUrl(url);
          req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -104,5 +103,34 @@ public class ServiceProduit {
                  NetworkManager.getInstance().addToQueueAndWait(req);//execution te3 request
            return Produits;
      
-}}
+}
+
+          public boolean ModifierActivite(Produit p) {
+ 
+        String url = Static.BASE_URL + "updateProduit?id=" + p.getId()+ "&idCategorie=" + p.getIdCategorie()+ "&description=" + p.getDescription()+ "&name=" + p.getName()+ "&image=" +p.getImage()+ "&price=" + p.getPrice();
+
+        req.setUrl(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200;  
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);//execution te3 request
+       
+        return resultOK;
+
+    }
+
+
+
+
+
+
+}
+
+
+
+
 
