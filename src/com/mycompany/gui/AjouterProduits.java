@@ -38,11 +38,11 @@ public class AjouterProduits extends BaseForm {
                 
                 TextField description= new TextField ("", "entrer description!"); 
                 description.setUIID("TextFieldBlack"); 
-            addStringValue("", description);
+                 addStringValue("", description);
                 
                 TextField name= new TextField ("","entrer name!"); 
                 name.setUIID("TextFieldBlack"); 
-                addStringValue("name", name);
+                addStringValue(" ", name );
                 
                 TextField price= new TextField ("","entrer price!"); 
                 price.setUIID("TextFieldBlack"); 
