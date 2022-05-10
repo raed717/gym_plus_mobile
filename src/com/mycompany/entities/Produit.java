@@ -27,6 +27,14 @@ public class Produit {
        public Produit() {
     }
 
+    public Produit(int idCategorie, String description, String name, String image, float price) {
+        this.idCategorie = idCategorie;
+        this.description = description;
+        this.name = name;
+        this.image = image;
+        this.price = price;
+    }
+
 
 
     public int getId() {

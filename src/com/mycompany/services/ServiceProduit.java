@@ -40,7 +40,7 @@ public class ServiceProduit {
     }
     
     
-    public void AddProduit(Produit p) {
+     public void AddProduit(Produit p) {
         String url = Static.BASE_URL + "/addProduit?description="+p.getDescription()+"&name="+p.getName() +"&price="+p.getPrice()+"&idCatgorie="+p.getIdCategorie()+"&image="+p.getImage();
             req.setUrl(url);
         req.setPost(false);
@@ -57,7 +57,7 @@ public class ServiceProduit {
     
 }
 
-      public ArrayList<Produit> afficherProduit() {
+     public ArrayList<Produit> afficherProduit() {
         String url = Static.BASE_URL + "/AfficherProduits";
         req.setUrl(url);
          req.addResponseListener(new ActionListener<NetworkEvent>() {
@@ -106,7 +106,7 @@ public class ServiceProduit {
      
 }
 
-          public boolean ModifierActivite(Produit p) {
+     public boolean ModifierActivite(Produit p) {
  
         String url = Static.BASE_URL + "updateProduit?id=" + p.getId()+ "&idCategorie=" + p.getIdCategorie()+ "&description=" + p.getDescription()+ "&name=" + p.getName()+ "&image=" +p.getImage()+ "&price=" + p.getPrice();
 
