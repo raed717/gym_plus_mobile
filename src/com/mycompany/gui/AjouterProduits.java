@@ -4,29 +4,32 @@
  * and open the template in the editor.
  */
 package com.mycompany.gui;
-
+ 
 import com.codename1.components.InfiniteProgress;
-import com.codename1.ui.Button;
+ import com.codename1.ui.Button;
 import com.codename1.ui.Component;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.TextField;
-import com.codename1.ui.Toolbar;
-import com.codename1.ui.layouts.BorderLayout;
-import com.codename1.ui.layouts.BoxLayout;
-import com.codename1.ui.util.Resources;
+   import com.codename1.ui.Toolbar;
+ import com.codename1.ui.util.Resources;
 import com.mycompany.entities.Produit;
- 
+ import com.codename1.ui.layouts.BorderLayout;
+import com.codename1.ui.layouts.BoxLayout;
+  
 /**
  *
  * @author firas
  */
 public class AjouterProduits extends BaseForm {
     Form current; 
+        Resources theme;
+
         public AjouterProduits(Resources res) {
 
             super("Newsfeed", BoxLayout.y());
+  
             
         Toolbar tb = new Toolbar(true);
         current=this;
@@ -36,36 +39,45 @@ public class AjouterProduits extends BaseForm {
                 setTitle("Ajouter Produits");
                 getContentPane().setScrollVisible(false);
                 
-                TextField description= new TextField ("", "entrer description!"); 
-                description.setUIID("TextFieldBlack"); 
-                 addStringValue("", description);
-                
-                TextField name= new TextField ("","entrer name!"); 
-                name.setUIID("TextFieldBlack"); 
-                addStringValue(" ", name );
-                
-                TextField price= new TextField ("","entrer price!"); 
-                price.setUIID("TextFieldBlack"); 
-                addStringValue("name", price);
+               
+        TextField description = new TextField("",  "entrer description!!");
+               description.setUIID("TexttFieldBlack");
+                                        addStringValue("description", description);
+
            
-                TextField image= new TextField ("","entrer image!"); 
-                image.setUIID("TextFieldBlack"); 
-                addStringValue("image", image); 
+               TextField name = new TextField("",  "entrer nom!!");
+                              name.setUIID("TexttFieldBlack");
+                addStringValue("name", name);
+                          
+               TextField  image = new TextField("",  "entrer image!!");
+             image.setUIID("TexttFieldBlack");
+                addStringValue("image", image);
+                          
+            
+               TextField idCategorie  = new TextField("",  "entrer idCat!!");
+                                             idCategorie.setUIID("TexttFieldBlack");
+
+                addStringValue("idCategorie", idCategorie);
+               
+                  TextField price = new TextField("", "entrer prix!!");
+                                                               price.setUIID("TexttFieldBlack");
+
+                                                               idCategorie.setUIID("TexttFieldBlack");
+
+                addStringValue("price", price);
+                       
+                    
+                      
+                Button save= new Button("Ajouter");
+                                addStringValue(" ", save);
+
                 
-                
-                   TextField idCategorie= new TextField (" ","entrer idCatgorie!"); 
-                idCategorie.setUIID("TextFieldBlack"); 
-                addStringValue("idCatgorie", idCategorie); 
-                
-                
-                Button btnAjouter= new Button ("ajouter");
-                addStringValue("",btnAjouter);
-                
-                btnAjouter.addActionListener((e) -> {
+            
+                save.addActionListener((e) -> {
                     try{
                         
-                        if (description.getText() =="" ||name.getText()==""||price.getText()=="" ||image.getText()==""||idCategorie.getText()==""){
-        Dialog.show("veuillez verifier les données ", "" ,"OK", "Cancel");
+                        if (description.getText() =="" ||name.getText()==""||price.getText()=="" ||image.getText()==""){
+        Dialog.show("veuillez verifier les données ", "","OK", "Cancel");
                         
                      }
                     else { 
@@ -81,8 +93,8 @@ public class AjouterProduits extends BaseForm {
 
                             
                             System.out.println("produits=" +p);
-iDialog.dispose();
-refreshTheme();
+   iDialog.dispose();
+    refreshTheme();
                             
                              }
              
@@ -95,11 +107,11 @@ refreshTheme();
                 
                 }
 
-
     private void addStringValue(String s, Component v) {
-        add (BorderLayout.west(new Label(s,"PaddedLabel"))
-                .add(BorderLayout.CENTER,s));
+     
+
+ add (BorderLayout.west(new Label(s,"PaddedLabel"))
+                .add(BorderLayout.CENTER,v));
                 add(createLineSeparator(0xeeeeee));
-                
-     }
+}
 }
