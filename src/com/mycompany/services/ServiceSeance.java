@@ -23,7 +23,6 @@ import java.util.Map;
  * @author saisi
  */
 public class ServiceSeance {
-    
      public ArrayList<Seance> Seances;
     public static ServiceSeance instance = null;
     public boolean resultOK;
@@ -41,7 +40,7 @@ public class ServiceSeance {
     }
     
     
-    public void AddSeance(Seance s) {
+    public void ajouterSeances(Seance s) {
         String url = Static.BASE_URL + "/addTabSeance?typeSeance="+s.getType_seance()+"&dateDebut="+s.getDate_debut() +"&dateFin="+s.getDate_fin()+"&idCoach="+s.getId_coach();
             req.setUrl(url);
         req.setPost(false);

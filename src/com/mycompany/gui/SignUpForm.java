@@ -65,7 +65,7 @@ public class SignUpForm extends BaseForm {
         
         Container content = BoxLayout.encloseY(
                 new Label("Sign Up", "LogoLabel"),
-                new FloatingHint(username),
+                new FloatingHint(NOM),
                 createLineSeparator(),
                 new FloatingHint(email),
                 createLineSeparator(),
