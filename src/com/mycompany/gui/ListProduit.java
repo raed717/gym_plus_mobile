@@ -32,7 +32,7 @@ import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.Style;
 import com.mycompany.services.ServiceProduit;
 import java.util.ArrayList;
-import javafx.scene.control.Tab;
+  import javafx.scene.control.Tab;
    
 
 /**
@@ -194,10 +194,9 @@ swipe.addTab("", res.getImage("back-logo.png") , page1);
          l.getParent().repaint(); 
 
      }
-ArrayList <Produit> list= ServiceProduit.getInstance().afficherProduit() ; 
-
-
-     
-
+      ArrayList<Produit>  list = ServiceProduit.getInstance().afficherProduit();
+      
+      
+   
 }
 
