@@ -40,7 +40,7 @@ public class ServiceProduit {
     
     
      public void AddProduit(Produit p) {
-        String url = Static.BASE_URL + "addProduit?description="+p.getDescription()+"&name="+p.getName() +"&price="+p.getPrice()+"&idCatgorie="+p.getIdCategorie()+"&image="+p.getImage();
+        String url = Static.BASE_URL + "/addProduit?description="+p.getDescription()+"&name="+p.getName() +"&price="+p.getPrice()+"&idCatgorie="+p.getIdCategorie()+"&image="+p.getImage();
             req.setUrl(url);
         req.setPost(false);
         req.addResponseListener((e)-> {
@@ -78,7 +78,7 @@ public class ServiceProduit {
                                              
                  
                       float id= Float.parseFloat(obj.get("id").toString());
-                      float idCatgorie= Float.parseFloat(obj.get("idCatgorie").toString());
+                      float idCatgorie= Float.parseFloat(obj.get("idCategorie").toString());
                       String description= obj.get("description").toString();
                       String name= obj.get("name").toString();
                       String image= obj.get("image").toString();
@@ -104,6 +104,7 @@ public class ServiceProduit {
            return Produits;
      
 }
+     
 
      public boolean ModifierActivite(Produit p) {
  
@@ -123,8 +124,38 @@ public class ServiceProduit {
 
     }
 
+public Produit DetailProduit ( int id , Produit produit) {
+    String url= Static.BASE_URL+ "/detailProduit" +id;
+    req.setUrl(url);
+    
+    String str = new String ( req.getResponseData());
+    req.addResponseListener((( evt) -> {
+        JSONParser jsonp = new JSONParser();
+        try {
+                     Map<String,Object>obj= jsonp.parseJSON(new CharArrayReader(new String (req.getResponseData()) .toCharArray()   ));
+            
+                    produit.setId(Integer.parseInt(obj.get("id").toString()));
+                   produit.setIdCategorie(Integer.parseInt(obj.get("idCategorie").toString()));
+                   produit.setDescription(obj.get("description").toString());
+                    produit.setName(obj.get("name").toString());
+                    produit.setImage(obj.get("image").toString());
+                     produit.setPrice(Float.parseFloat(obj.get("price").toString()));
 
+            
+            
+        }catch (IOException EX) { 
+            System.out.println("error");
+        }
+        
+        System.out.println("data=="+str);  
+    }));
+    
 
+        NetworkManager.getInstance().addToQueueAndWait(req);//execution te3 request
+
+ 
+return produit;
+}
 
 
 

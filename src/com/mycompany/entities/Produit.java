@@ -14,6 +14,13 @@ public class Produit {
     private int idCategorie;
     private String description,name, image;  
     private float price;
+
+    public Produit(String description, String name, String image, float price) {
+        this.description = description;
+        this.name = name;
+        this.image = image;
+        this.price = price;
+    }
  
 
     public Produit(int id, int idCategorie, String description, String name, String image, float price) {

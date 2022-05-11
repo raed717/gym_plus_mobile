@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.gui;
- 
+
 import com.codename1.components.InfiniteProgress;
 import com.codename1.components.ScaleImageLabel;
 import com.codename1.components.SpanLabel;
@@ -31,23 +31,23 @@ import com.codename1.ui.layouts.GridLayout;
 import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.Style;
 import com.mycompany.services.ServiceProduit;
+import java.util.ArrayList;
 import javafx.scene.control.Tab;
    
+
 /**
  *
  * @author firas
  */
-public class AjouterProduits extends BaseForm {
-    Form current; 
-        Resources theme;
+public class ListProduit extends BaseForm{
+    
+            public ListProduit(Resources res) {
 
-        public AjouterProduits(Resources res) {
-
-            super("Newsfeed", BoxLayout.y());
+    super("Newsfeed", BoxLayout.y());
   
             
         Toolbar tb = new Toolbar(true);
-        current=this;
+    Form current; 
         setToolbar(tb);
         getTitleArea().setUIID("Container");
         
@@ -121,8 +121,6 @@ public class AjouterProduits extends BaseForm {
         //  ListReclamationForm a = new ListReclamationForm(res);
           //  a.show();
             refreshTheme();
-            
-            
         });
 
         add(LayeredLayout.encloseIn(
@@ -143,86 +141,16 @@ public class AjouterProduits extends BaseForm {
         addOrientationListener(e -> {
             updateArrowPosition(barGroup.getRadioButton(barGroup.getSelectedIndex()), arrow);
         });
-               
-                
-                
-                
-                
-               
-        TextField description = new TextField("",  "entrer description!!");
-               description.setUIID("TexttFieldBlack");
-                                        addStringValue("description", description);
-
-           
-               TextField name = new TextField("",  "entrer nom!!");
-                              name.setUIID("TexttFieldBlack");
-                addStringValue("name", name);
-                          
-               TextField  image = new TextField("",  "entrer image!!");
-             image.setUIID("TexttFieldBlack");
-                addStringValue("image", image);
-                
-                      TextField  idCategorie = new TextField("",  "entrer id!!");
-             idCategorie.setUIID("TexttFieldBlack");
-                addStringValue("idCategorie", idCategorie);     
-            
-               
-                  TextField price = new TextField("", "entrer prix!!");
-                                                                price.setUIID("TexttFieldBlack");
-                                                                  addStringValue("price", price);
-                       
-                    
-                      
-                Button save= new Button("Ajouter");
-                                addStringValue("", save);
-                save.addActionListener((e) -> {
-                    try{
-                        
-                        if (description.getText() =="" ||name.getText()==""||price.getText()=="" ||image.getText()==""){
-        Dialog.show("veuillez verifier les données ", "","OK", "Cancel");
-                        
-                     }
-                    else { 
-                            InfiniteProgress ip = new InfiniteProgress();
-                            final Dialog iDialog = ip.showInfiniteBlocking(); 
-                            
-                            Produit p = new Produit (
-                     Integer.parseInt(idCategorie.getText()),
-
-                                String.valueOf(description.getText()),
-                               String.valueOf(name.getText()).toString(),
-                               String.valueOf(image.getText()).toString(),
-                              Float.parseFloat(price.getText()));
-
-                            
-                            System.out.println("produits=+" +p);
-                            
-                            ServiceProduit.getInstance().AddProduit(p);
-   iDialog.dispose();
-   new ListProduit(res).show();
-   
-    refreshTheme();
-                            
-                             }
-             
-                            
-                    }catch(Exception ex){
-                        ex.printStackTrace();
-                    }
-                        
-                }             );
-                
-                }
-
-    private void addStringValue(String s, Component v) {
+        
+            }
+            private void addStringValue(String s, Component v) {
      
 
  add (BorderLayout.west(new Label(s,"PaddedLabel"))
                 .add(BorderLayout.CENTER,v));
                 add(createLineSeparator(0xeeeeee));
 }
-
-    private void addTab(Tabs swipe, Label spacer ,Image image, String string, String text, Resources res) {
+ private void addTab(Tabs swipe, Label spacer ,Image image, String string, String text, Resources res) {
  int size = Math.min(Display.getInstance().getDisplayWidth(),Display.getInstance().getDisplayHeight());
  
         ScaleImageLabel imageScale= new ScaleImageLabel(image); 
@@ -266,6 +194,10 @@ swipe.addTab("", res.getImage("back-logo.png") , page1);
          l.getParent().repaint(); 
 
      }
-    
-    
-        }
+ArrayList <Produit> list= ServiceProduit.getInstance().afficherProduit() ; 
+
+
+     
+
+}
+
