@@ -62,7 +62,7 @@ public class AjouterProduits extends BaseForm {
                 Label s1= new Label();
                 Label s2 = new Label();
                  
-                addTab(swipe,s1,res.getImage("back.png"), "","",res);
+                addTab(swipe,s1,res.getImage("back-logo.png"), "","",res);
                 
                 
                 
@@ -187,8 +187,7 @@ public class AjouterProduits extends BaseForm {
                             final Dialog iDialog = ip.showInfiniteBlocking(); 
                             
                             Produit p = new Produit (
-                     Integer.parseInt(idCategorie.getText()),
-
+                            Integer.parseInt(idCategorie.getText()),
                                 String.valueOf(description.getText()),
                                String.valueOf(name.getText()).toString(),
                                String.valueOf(image.getText()).toString(),
