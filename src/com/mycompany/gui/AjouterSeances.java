@@ -24,6 +24,7 @@ import com.mycompany.entities.Seance;
  */
 public class AjouterSeances extends BaseForm {
     Form current; 
+    Resources theme;
         public AjouterSeances(Resources res) {
 
             super("Newsfeed", BoxLayout.y());
@@ -38,27 +39,27 @@ public class AjouterSeances extends BaseForm {
                 
                 TextField type_seance= new TextField ("", "entrer type seance!"); 
                 type_seance.setUIID("TextFieldBlack"); 
-                 addStringValue("", type_seance);
+                 addStringValue("type_seance", type_seance);
                 
                 TextField date_debut= new TextField ("","entrer date debut!"); 
                 date_debut.setUIID("TextFieldBlack"); 
-                addStringValue(" ", date_debut );
+                addStringValue("date_debut", date_debut );
                 
                 TextField date_fin= new TextField ("","entrer date fin!"); 
                 date_fin.setUIID("TextFieldBlack"); 
-                addStringValue("", date_fin);
+                addStringValue("date_fin", date_fin);
            
                 TextField id_coach= new TextField ("","entrer coach!"); 
                 id_coach.setUIID("TextFieldBlack"); 
-                addStringValue("", id_coach); 
+                addStringValue("id_coach", id_coach); 
                 
                 
                
                 
-                Button btnAjouter= new Button ("ajouter");
-                addStringValue("",btnAjouter);
+                Button save= new Button ("ajouter");
+                addStringValue("",save);
                 
-                btnAjouter.addActionListener((e) -> {
+                save.addActionListener((e) -> {
                     try{
                         
                      if (type_seance.getText() =="" ||date_debut.getText()==""||date_fin.getText()=="" ||id_coach.getText()==""){
@@ -98,7 +99,7 @@ refreshTheme();
 
     private void addStringValue(String s, Component v) {
         add (BorderLayout.west(new Label(s,"PaddedLabel"))
-                .add(BorderLayout.CENTER,s));
+                .add(BorderLayout.CENTER,v));
                 add(createLineSeparator(0xeeeeee));
                 
      }
