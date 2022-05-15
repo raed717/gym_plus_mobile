@@ -15,6 +15,7 @@ import com.codename1.ui.Container;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
 import com.codename1.ui.EncodedImage;
+import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Graphics;
 import com.codename1.ui.Image;
@@ -69,7 +70,7 @@ public class ListProduit extends BaseForm{
                 
                 
                 
-                swipe.setUIID("Container");
+         swipe.setUIID("Container");
         swipe.getContentPane().setUIID("Container");
         swipe.hideTabs();
 
@@ -156,7 +157,7 @@ public class ListProduit extends BaseForm{
             EncodedImage enc = EncodedImage.createFromImage(placeholder, false);
             URLImage urlim = URLImage.createToStorage(enc, urlImage, urlImage, URLImage.RESIZE_SCALE);
 
-            addButton(urlim, rec.getDescription(), rec.getName(),rec.getPrice(), rec.getId(),rec);
+            addButton(urlim, rec.getDescription(), rec.getName(),rec.getPrice(), rec.getId(),res,rec);
 
             ScaleImageLabel imag = new ScaleImageLabel(urlim);
 
@@ -229,7 +230,7 @@ public class ListProduit extends BaseForm{
         l.getParent().repaint();
     }
 
-    private void addButton(Image img , String description, String name, float price, int id, Produit rec) {
+    private void addButton(Image img, String description, String name, float price, int id,  Resources res,Produit rec) {
      
        int height = Display.getInstance().convertToPixels(11.5f);
         int width = Display.getInstance().convertToPixels(14f);
@@ -238,8 +239,37 @@ public class ListProduit extends BaseForm{
         Container cnt = BorderLayout.west(imag);
    Label  NameTxt = new  Label("name" +name,"NewsTopLine2");
   Label  idp = new  Label("ip_produit" +id,"NewsTopLine2");
+ createLineSeparator();
+ 
+ 
+  cnt.add(BorderLayout.CENTER, BoxLayout.encloseY(BoxLayout.encloseY(idp) )); 
+ 
+  Label lsupp = new Label();
+  lsupp.setUIID("NewsTopLine");
+  Style supprimerstyle= new Style(lsupp.getUnselectedStyle());
+  supprimerstyle.setFgColor(0xf21f1f);
+        FontImage supprimerImage = FontImage.createMaterial(FontImage.MATERIAL_DELETE, supprimerstyle);
+        lsupp.setIcon(supprimerImage);
+  lsupp.setTextPosition(RIGHT);
+  lsupp.addPointerPressedListener( l-> {
+  Dialog dig = new Dialog("suppression");
+  if (dig.show("Suppression", "vous voilez  supprimer ce produit?", "Annuler" , "Oui") ) {
+      dig.dispose(); 
+  }
+          else{ 
+                  dig.dispose();
+                  if (ServiceProduit.getInstance().deleteProduit(rec.getId())){
+                      new ListProduit(res).show();
+                  }
+  }
+  });
+  
+  
+  
+    cnt.add(BorderLayout.CENTER, BoxLayout.encloseY( 
+             BoxLayout.encloseX(NameTxt,lsupp)));
 
-  cnt.add(BorderLayout.CENTER, BoxLayout.encloseY( BoxLayout.encloseY(NameTxt),BoxLayout.encloseY(idp) )); 
+  
  
             add(cnt);
             }}

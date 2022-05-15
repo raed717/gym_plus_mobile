@@ -24,7 +24,7 @@ import java.util.List;
 public class ServiceProduit {
       public ArrayList<Produit> Produits;
     public static ServiceProduit instance = null;
-    public boolean resultOK;
+    public boolean resultOK= true;
     private ConnectionRequest req;
 
     public ServiceProduit() {
@@ -159,8 +159,8 @@ public Produit DetailProduit ( int id , Produit produit) {
 return produit;
 }
 
-public boolean deleteActivite(int id) {
-        String url = Static.BASE_URL + "SupprimerProduits/" + id;
+public boolean deleteProduit (int id) {
+        String url = Static.BASE_URL + "/SupprimerProduits?id=" + id;
         req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
