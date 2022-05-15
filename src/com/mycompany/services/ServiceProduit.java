@@ -159,7 +159,25 @@ public Produit DetailProduit ( int id , Produit produit) {
 return produit;
 }
 
+public boolean deleteActivite(int id) {
+        String url = Static.BASE_URL + "SupprimerProduits/" + id;
+        req.setUrl(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                req.removeResponseListener(this);
+            }
+        });
 
+        System.out.println(url);
+        req.setUrl(url);
+        req.addResponseListener(e -> {
+            String str = new String(req.getResponseData());//reponse jason 
+            System.out.println("data ==> " + str);
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);//execution te3 request
+        return resultOK;
+    }
 
 }
 

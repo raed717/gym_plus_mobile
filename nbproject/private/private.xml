@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
+            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/gui/MapForm.java</file>
+            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/gui/BaseForm.java</file>
+            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/gui/SignInForm.java</file>
             <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/gui/AjouterProduits.java</file>
+            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/services/ServiceProduit.java</file>
+            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/gui/ProfileForm.java</file>
+            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/gui/NewsfeedForm.java</file>
+            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/gui/ListProduit.java</file>
+            <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/mycompany/gui/WalkthruForm.java</file>
+            <file>jar:file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/lib/CodenameOne_SRC.zip!/com/codename1/ui/Button.java</file>
             <file>file:/C:/Users/firas/OneDrive/Desktop/gym_plus_mobile/src/com/pidevv/MyApplication.java</file>
-=======
-            <file>file:/C:/Users/saisi/Desktop/gym_plus_mobile/src/com/pidevv/MyApplication.java</file>
-            <file>file:/C:/Users/saisi/Desktop/gym_plus_mobile/src/com/mycompany/gui/AjouterSeances.java</file>
->>>>>>> b1d823ec373db043712b94c98790bb21b1dff715
         </group>
     </open-files>
 </project-private>

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <image name="1.jpg"  />
+    <image name="2.jpg"  />
     <image name="activation-background.jpg"  />
     <image name="back-logo.jpeg"  />
     <image name="back-logo.png"  />
     <image name="back.png"  />
     <image name="confirmation-background.jpg"  />
     <image name="dog.jpg"  />
+    <image name="f.png"  />
     <image name="facebook-logo.png" type="multi"  />
     <image name="Logo.png" type="multi"  />
     <image name="news-item-1.jpg"  />
@@ -18,6 +21,8 @@
     <image name="news-tab-down.png" type="multi"  />
     <image name="on-off-off.png" type="multi"  />
     <image name="on-off-on.png" type="multi"  />
+    <image name="pro3.png"  />
+    <image name="pro4.png"  />
     <image name="profile-background.jpg"  />
     <image name="profile-pic.jpg" type="multi"  />
     <image name="signin-background.jpg"  />

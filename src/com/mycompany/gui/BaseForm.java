@@ -77,9 +77,15 @@ public class BaseForm extends Form {
         tb.addComponentToSideMenu(LayeredLayout.encloseIn(
                 sl,
                 FlowLayout.encloseCenterBottom(
-                        new Label(res.getImage("profile-pic.jpg"), "PictureWhiteBackgrond"))
+                        new Label(res.getImage("f.png"), "PictureWhiteBackgrond"))
         ));
-
+        
+        tb.addMaterialCommandToSideMenu("Newsfeed", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
+        tb.addMaterialCommandToSideMenu("Profile", FontImage.MATERIAL_SETTINGS, e -> new ProfileForm(res).show());
+        tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show());
+        tb.addMaterialCommandToSideMenu("Product Mnagement", FontImage.MATERIAL_EXIT_TO_APP, e -> new AjouterProduits(res).show());
+       tb.addMaterialCommandToSideMenu("Product Display", FontImage.MATERIAL_EXIT_TO_APP, e -> new ListProduit(res).show());
+        tb.addMaterialCommandToSideMenu("Map", FontImage.MATERIAL_EXIT_TO_APP, e -> new MapForm());
         
     }
     

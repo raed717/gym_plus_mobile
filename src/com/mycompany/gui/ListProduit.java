@@ -236,11 +236,10 @@ public class ListProduit extends BaseForm{
          Button imag = new Button(img.fill(width, height));
         imag.setUIID("Label");
         Container cnt = BorderLayout.west(imag);
- TextArea ta = new TextArea(description);
+   Label  NameTxt = new  Label("name" +name,"NewsTopLine2");
+  Label  idp = new  Label("ip_produit" +id,"NewsTopLine2");
 
- ta.setUIID("NewsTopLine");
- ta.setEditable(false);
- cnt.add(BorderLayout.CENTER, BoxLayout.encloseY(ta)); 
+  cnt.add(BorderLayout.CENTER, BoxLayout.encloseY( BoxLayout.encloseY(NameTxt),BoxLayout.encloseY(idp) )); 
  
             add(cnt);
             }}
