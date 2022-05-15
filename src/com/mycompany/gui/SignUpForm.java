@@ -81,7 +81,7 @@ public class SignUpForm extends BaseForm {
                 FlowLayout.encloseCenter(alreadHaveAnAccount, signIn)
         ));
         next.requestFocus();
-        next.addActionListener(e -> new ActivateForm(res).show());
+        next.addActionListener(e -> new FirstForm(res).show());
     }
     
 }

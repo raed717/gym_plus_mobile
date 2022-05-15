@@ -55,7 +55,7 @@ public class ProfileForm extends BaseForm {
         tb.addSearchCommand(e -> {});
         
         
-        Image img = res.getImage("profile-background.jpg");
+        Image img = res.getImage("f.png");
         if(img.getHeight() > Display.getInstance().getDisplayHeight() / 3) {
             img = img.scaledHeight(Display.getInstance().getDisplayHeight() / 3);
         }
@@ -74,7 +74,7 @@ public class ProfileForm extends BaseForm {
                     GridLayout.encloseIn(3, 
                             facebook,
                             FlowLayout.encloseCenter(
-                                new Label(res.getImage("profile-pic.jpg"), "PictureWhiteBackgrond")),
+                                new Label(res.getImage("f.png"), "PictureWhiteBackgrond")),
                             twitter
                     )
                 )
